@@ -12,6 +12,7 @@ const displayItems = () => {
 
     itemArray = JSON.parse(localStorage.getItem("item"));
     console.log(itemArray);
+
 }
 displayItems();
 const createItem = (name, price, unit) => {
@@ -21,20 +22,21 @@ const createItem = (name, price, unit) => {
 
 
 const storeItem = (name, price, unit) => {
-    let items = itemArray||[];
+    let items = itemArray;
     console.log(items);
     let flag = true;
     for (let index = 0; index < items.length||0; index++) {
-        const ele = array[index];
-        if (ele.name = name) {
+        const ele = items[index];
+        if (ele.name == name) {
             ele.price = price;
             ele.unit = ele.unit + unit;
             flag = false;
         }
     }
     if (flag) {
-        items=[...items,createItem(name, price, unit)];
+        items=[...itemArray,createItem(name, price, unit)];
     }
+    console.log(items);
     localStorage.setItem('item', JSON.stringify(items));
     itemArray = items;
     alert("New Item Added");
@@ -93,8 +95,21 @@ addButton.addEventListener('click',()=>{
 
 ///
 const addSelect=document.getElementById("newDrop");
-for (let index = 0; index < array.length; index++) {
+for (let index = 0; index < itemArray.length; index++) {
     const ele = itemArray[index];
 
     addButton.appendChild(``)
 }
+
+
+// sale item
+const  saleButton=document.getElementById("saleButton");
+saleButton.addEventListener('click', ()=>{
+    let name= document.getElementById("delItem").value;
+    let unit= document.getElementById("delPu").value;
+    for (let i = 0; i < itemArray.length; i++){
+        if(name==itemArray[i].name){
+            sale(name, unit);
+        }
+    }
+});

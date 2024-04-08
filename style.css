@@ -73,7 +73,9 @@ input{
 #heading{
     display: grid;
     grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
+    
 }
-#heading div{
+#heading{
     font-size: 22px;
+    align-items: flex-start;
 }

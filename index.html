@@ -37,7 +37,7 @@
           </select>
           <input type="text" placeholder="Item name" id="delItem" class="a">
           <input type="text" placeholder="units" id="delPu" class="a">
-          <button onclick="saleItem()">Sale</button>
+          <button id="saleButton">Sale</button>
         </div>
         <div id="remaining">
           <h1>In-stock</h1>
@@ -51,7 +51,17 @@
             <div id="salePM">total sold</div>
           </div>
           <div id="itemsList">
-            <ul></ul>
+            <ul>
+              <li id="heading">
+                <div id="name">item1</div>
+                <div id="unit">10</div>
+                <div id="perUnit">rs 5/unit</div>
+                <div id="cost">50</div>
+                <div id="date">01.04.2024</div>
+                <div id="in">20</div>
+                <div id="salePM">10</div>
+              </li>
+            </ul>
           </div>
         </div>
     </div>
